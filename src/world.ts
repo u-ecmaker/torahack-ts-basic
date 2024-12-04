@@ -10,7 +10,4 @@ export default class World {
       element.innerText = this.message;
     }
   }
-
-
-
 }
