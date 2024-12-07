@@ -28,11 +28,20 @@ export const logMessage5: LogMessage = (message) => {
   console.log('Function basic sample 5:', message);
 };
 
+// typeと関数を一緒に定義1
+export const logMessage6: (message: string) => void = (message) => {
+  console.log('Function basic sample 6:', message);
+};
+// typeと関数を一緒に定義2
+export const logMessage7 = (message: string): void => {
+  console.log('Function basic sample 7:', message);
+};
+
 // 完全な呼び出しシグネチャ
 type FullLogMessage = {
   (message: string): void;
 };
 
-export const logMessage6: FullLogMessage = (message) => {
-  console.log('Function basic sample 6:', message);
+export const logMessage8: FullLogMessage = (message) => {
+  console.log('Function basic sample 8:', message);
 };

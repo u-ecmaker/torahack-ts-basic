@@ -15,7 +15,7 @@
 
 //
 /* #05 関数の型定義 */
-// import { logMessage, logMessage5, logMessage6 } from './function/basic';
+// import { logMessage, logMessage5, logMessage6, logMessage7, logMessage8 } from './function/basic';
 // import { isUserSignedIn, isUserSignedIn2, sumProductsPrice } from './function/parameters';
 
 // logMessage('Hello, World!');
@@ -35,6 +35,8 @@
 
 // logMessage5('Hello, World!');
 // logMessage6('Hello, World!');
+// logMessage7('Hello, World!');
+// logMessage8('Hello, World!');
 
 //
 /* #06 オブジェクトの型定義 */
@@ -45,7 +47,14 @@
 
 //
 /* #07 配列の型定義 */
-import arraySample from './array/array';
-import tupleSample from './array/tuple';
-arraySample();
-tupleSample();
+// import arraySample from './array/array';
+// import tupleSample from './array/tuple';
+// arraySample();
+// tupleSample();
+
+//
+/* #08 ジェネリック型 */
+import genericsBasicSample from './generics/basic';
+import genericsAdvancedSample from './generics/advanced';
+genericsBasicSample();
+genericsAdvancedSample();
