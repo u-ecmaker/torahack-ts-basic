@@ -1,4 +1,5 @@
-export default function notExistSample() {
+export default function notExistSample(): void {
+  // eslint-disable-next-line prefer-const
   let name = null;
   console.log('notExistSample 1:', typeof name, name);
 

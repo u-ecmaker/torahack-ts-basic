@@ -1,4 +1,4 @@
-export default function unknownSample() {
+export default function unknownSample(): void {
   const maybeNumber: unknown = 10;
   console.log('unknown Sample 1:', typeof maybeNumber, maybeNumber);
 
