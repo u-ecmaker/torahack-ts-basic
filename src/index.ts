@@ -61,5 +61,10 @@
 
 //
 /* #09 オブジェクト指向プログラミング */
-import shogi from './oop/shogi'; // oop: object oriented programming (オブジェクト指向)
-shogi();
+// import shogi from './oop/shogi'; // oop: object oriented programming (オブジェクト指向)
+// shogi();
+
+//
+/* #10 インターフェイス */
+import interfaceSample from './interface/interface';
+interfaceSample();
