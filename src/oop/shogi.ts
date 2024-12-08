@@ -17,6 +17,14 @@ export default function shogi(): void {
       private dan: Dan,
     ) {}
 
+    public getSuji(): Suji {
+      return this.suji;
+    }
+
+    public getDan(): Dan {
+      return this.dan;
+    }
+
     // メソッドの定義
     public distanceFrom(position: Position, player: Player): { suji: number; dan: number } {
       if (player === 'SenTe') {
@@ -51,9 +59,17 @@ export default function shogi(): void {
 
     // メソッドの定義
     moveTo(position: Position): void {
+      console.log(
+        `Moving from (${this.position.getSuji()}, ${this.position.getDan()}) to (${position.getSuji()}, ${position.getDan()})`,
+      );
       this.position = position;
     }
+
     abstract canMoveTo(position: Position, player: Player): boolean; // サブクラスの中で実装する
+
+    public getPosition(): Position {
+      return this.position;
+    }
   }
   // const p1 = new Piece('SenTe', 3, '6'); // abstract class はインスタンス化できない
   // console.log(p1, p1.position);
@@ -76,6 +92,7 @@ export default function shogi(): void {
   }
 
   // と
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   class NariFu extends Fu {
     canMoveTo(position: Position, player: Player): boolean {
       const distance = this.position.distanceFrom(position, player);
@@ -94,8 +111,12 @@ export default function shogi(): void {
   class Game {
     private pieces = Game.makePieces();
 
+    public getPieces(): Piece[] {
+      return this.pieces;
+    }
+
     // ゲームを初期化するメソッド
-    private static makePieces() {
+    private static makePieces(): Piece[] {
       return [
         new Osho('SenTe', 5, '1'),
         new Osho('GoTe', 5, '9'),
@@ -127,4 +148,22 @@ export default function shogi(): void {
 
   const game = new Game();
   console.log(game);
+
+  //
+  // // 駒の移動
+  const syoteIndex = game
+    .getPieces()
+    .findIndex(
+      (piece) =>
+        piece instanceof Fu && piece.getPosition().getSuji() === 7 && piece.getPosition().getDan() === '3',
+    );
+
+  const syote = game.getPieces()[syoteIndex];
+  console.log('syote', syote.getPosition());
+
+  setTimeout(() => {
+    // 1秒後に移動
+    syote.moveTo(new Position(7, '4')); // 7, '4' に移動
+    console.log(game);
+  }, 1000);
 }
