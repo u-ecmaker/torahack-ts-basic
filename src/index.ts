@@ -53,8 +53,13 @@
 // tupleSample();
 
 //
-/* #08 ジェネリック型 */
-import genericsBasicSample from './generics/basic';
-import genericsAdvancedSample from './generics/advanced';
-genericsBasicSample();
-genericsAdvancedSample();
+// /* #08 ジェネリック型 */
+// import genericsBasicSample from './generics/basic';
+// import genericsAdvancedSample from './generics/advanced';
+// genericsBasicSample();
+// genericsAdvancedSample();
+
+//
+/* #09 オブジェクト指向プログラミング */
+import shogi from './oop/shogi'; // oop: object oriented programming (オブジェクト指向)
+shogi();
